@@ -1,0 +1,71 @@
+.modal-overlay
+    display: none
+    position: fixed
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+    background: rgba(25, 132, 155, 0.5)
+    z-index: 1
+    padding: 100px 15px 0 15px
+
+.modal
+    position: relative
+    max-width: 656px
+    width: 100%
+    min-height: 586px
+    background: #272A2F
+    padding: 49px 45px
+    margin: 0 auto
+    animation: animate .5s
+
+@keyframes animate 
+    from 
+        top: -300px
+        opacity: 0
+    to 
+        top: 0
+        opacity: 1 
+
+.modal-title
+    @extend %subtitles
+    margin-bottom: 15px
+
+.modal-desc
+    @extend %paragraphs
+
+.form
+    margin-top: 26px
+    display: flex
+    flex-wrap: wrap
+    gap: 20px
+
+.user-name
+    width: 200px
+    height: 50px
+    @include inputs
+    padding-left: 16px
+
+.user-email
+    width: 345px
+    height: 50px
+    @include inputs
+    padding-left: 16px
+
+.user-message
+    width: 567px
+    height: 219px
+    @include inputs
+    resize: none
+    padding: 16px 22px 0 22px
+
+.submit-button
+    @include buttons($max-width: 217px)
+    @include aboutText($font: 20px, $height: 21px, $weight: 700)
+
+.open
+    display: block
+    overflow: hidden
+
+
+

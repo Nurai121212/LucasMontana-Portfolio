@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&display=swap');
+
+$clr1 : #19849B
+$clr2 : #fff
+$clr3: #8EA5AC
+
+@mixin aboutText($font : 16px, $height : 18px, $transform : uppercase, $weight : 400, $clr : #fff )
+    font-size: $font
+    line-height: $height
+    color: $clr
+    text-transform: $transform
+    font-weight: $weight
+    font-family: 'Ubuntu', sans-serif
+
+%titles
+    @include aboutText($font: 30px, $height: 34px, $weight: 700, $transform : none)
+
+%subtitles
+    @include aboutText($font: 24px, $height: 27px, $weight: 700, $transform : none)
+
+%paragraphs
+    @include aboutText($transform : none)
+
+@mixin buttons($max-width: 239px, $height: 50px)
+    max-width: $max-width
+    width: 100%
+    height: $height
+    border: 2px solid $clr2
+    text-align: center
+    transition: .3s
+    &:hover
+        background: $clr1
+        border: 0
+
+@mixin placeholder()
+    &::-webkit-input-placeholder
+        @include aboutText($clr : $clr3, $transform : none, $weight: 300 )
+    &:-moz-placeholder
+        @include aboutText($clr : $clr3, $transform : none, $weight: 300 )           
+    &::-moz-placeholder
+        @include aboutText($clr : $clr3, $transform : none, $weight: 300 )       
+    &:-ms-input-placeholder
+        @include aboutText($clr : $clr3, $transform : none, $weight: 300 )     
+    &::-webkit-input-placeholder
+        @include aboutText($clr : $clr3, $transform : none, $weight: 300 )
+
+@mixin inputs
+    background: #324B53
+    border: 0
+    @include placeholder
+    @include aboutText($transform: none, $weight: 300)
+    &:focus
+        outline: none
+
+@mixin flexType($justify: space-between, $direction: column, $wrap: wrap, $align: center)
+    display: flex
+    justify-content: $justify
+    flex-direction: $direction
+    flex-wrap: $wrap
+    align-items: $align
+
+@import '_normalize'
+@import '_main'
+@import '_main-adaptive'
+@import '_main-modal'

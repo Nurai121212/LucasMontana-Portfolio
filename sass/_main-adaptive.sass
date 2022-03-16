@@ -1,0 +1,40 @@
+@media screen and (max-width: 1025px)
+    .preview-img
+        background: url('../imgs/preview-img(tablet).png') center center no-repeat
+        background-size: cover
+        max-width: 762px
+        width: 100%
+        min-height: 355px
+    .preview
+        @include flexType($justify: none, $wrap: none, $align: none)
+        gap: 65px
+    .container
+        max-width: 792px
+        padding: 51px 0
+    .portfolio
+        margin-top: 51px
+    .portfolio-item
+        flex-basis: 180px
+    .user-email
+        display: block
+        min-width: 100%
+    .user-name
+        display: block
+        min-width: 100%
+    label
+        display: block
+        width: 100%
+        overflow: hidden
+
+@media screen and (max-width: 650px)
+    .portfolio-item
+        flex-basis: 160px
+    .portfolio_content
+        gap: 14px
+
+@media screen and (max-width: 375px)
+    .preview-img
+        background: url('../imgs/preview-img(mb).png') center center no-repeat
+    .preview-button
+        max-width: 100%
+        width: 100%
