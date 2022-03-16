@@ -47,3 +47,22 @@ closeModal.addEventListener('submit', function(e){
     }
   }
 });
+const img = document.querySelectorAll('.folio-img'),
+      imgOverlay = document.querySelectorAll('.img-overlay'),
+      imgModal = document.querySelector('.img-modal'),
+      imgClose = document.querySelector('.img-close'),
+      imgContent = document.querySelector('.img-content');
+
+for(let i = 0; i< imgOverlay.length; i++){
+  imgOverlay[i].addEventListener('click', function(e){
+    imgModal.classList.add('active');
+    imgContent.src = img[i].src;
+    document.body.style.overflow = 'hidden';
+  });
+}
+document.addEventListener('click', function(e){
+  if(e.target == imgClose || e.target == imgModal){
+    imgModal.classList.remove('active');
+    document.body.style.overflow = '';
+  }
+})
